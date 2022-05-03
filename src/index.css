@@ -1,3 +1,50 @@
+/* Landing font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,800;0,900;1,800;1,900&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.star-svg{
+  display: inline;
+}
+
+.spikes {
+  position: relative;
+  background:rgb(229 231 235);
+  /* background:rgb(54, 99, 188); */
+  height: 3rem;
+}
+
+.spikes::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  left: -0%;
+  top: 100%;
+  z-index: 10;
+  display: block;
+  height: 50px;
+  background-size: 50px 100%;
+  background-image: linear-gradient(135deg, rgb(229 231 235) 25%, transparent 25%), linear-gradient(225deg, rgb(229 231 235) 25%, transparent 25%);
+  background-position: 0 0;
+}
