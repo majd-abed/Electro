@@ -10,7 +10,6 @@ import { useGlobal } from "../context/context";
 const SingleProductPage = () => {
   const { handleAddToCart } = useGlobal();
   const { productId } = useParams();
-  const [loading, setLoading] = useState(true);
   const [productData, setProductData] = useState([]);
   const [imgIndex, setImgIndex] = useState(2);
   const [quantity, setQuantity] = useState(1);
@@ -31,7 +30,6 @@ const SingleProductPage = () => {
   };
   useEffect(() => {
     fetchProduct();
-    setLoading(false);
   }, []);
 
   if (!productData?.assets) return <Loading/>;
@@ -55,7 +53,7 @@ const SingleProductPage = () => {
                     />
                   </button>
                 </div>
-                <div className='grid grid-cols-5 gap-1 pt-5 px-4 '>
+                <div className='grid grid-cols-5 gap-1 pt-12 pb-2 px-4 '>
                   {productData?.assets.map((image, index) => {
                     if (index % 2 !== 0 && index > 0)
                       return (
@@ -67,7 +65,7 @@ const SingleProductPage = () => {
                           <img
                             src={image.url}
                             alt=''
-                            className='max-w-16 max-h-16 hover:scale-[1.1] duration-200'
+                            className='max-w-16 max-h-16 hover:scale-[1.07] duration-200'
                           />
                         </button>
                       );
