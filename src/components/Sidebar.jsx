@@ -12,14 +12,13 @@ const Sidebar = () => {
   const { isSidebarOpen, switchSidebar } = useGlobal();
   return (
     <>
-    <section
-    onClick={switchSidebar}
-      className={clsx(
-        " bg-gray-900/30 fixed w-full h-full top-0 left-0 transition duration-150 flex",
-        { "z-20 opacity-100": !isSidebarOpen },
-        { "-z-10 opacity-0": isSidebarOpen }
-      )}
-    ></section>
+      <section
+        onClick={switchSidebar}
+        className={clsx(
+          " bg-gray-900/30 fixed w-full h-full top-0 left-0 transition duration-150 flex",
+          { "z-20 opacity-100": !isSidebarOpen },
+          { "-z-10 opacity-0": isSidebarOpen }
+        )}></section>
       <div
         className={clsx(
           "duration-300 lg:hidden w-[60vw] h-screen fixed top-0  bg-[#0c182d] z-30  opacity-100",
@@ -27,7 +26,10 @@ const Sidebar = () => {
           { "translate-x-0 shadow-2xl shadow-black": !isSidebarOpen }
         )}>
         <div className='relative'>
-          <div className={isAuthenticated && "h-screen flex flex-col justify-between"}>
+          <div
+            className={
+              isAuthenticated ? "h-screen flex flex-col justify-between" : null
+            }>
             <ul className='z-20 flex-cols  '>
               {linksData.map((link) => {
                 const { id, name, url, icon } = link;
@@ -43,7 +45,8 @@ const Sidebar = () => {
                       </Link>
                     </li>
                   );
-                else return <SidebarProductDropdown key={id} name={name} icon={icon} />;
+                else
+                  return <SidebarProductDropdown key={id} name={name} icon={icon} />;
               })}
             </ul>
             {isAuthenticated && (

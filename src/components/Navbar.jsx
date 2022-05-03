@@ -62,7 +62,10 @@ const Navbar = ({ totalItems }) => {
                   </button>
                 </>
               ) : (
-                <button className='' title='Log In' onClick={() => loginWithRedirect()}>
+                <button
+                  className=''
+                  title='Log In'
+                  onClick={() => loginWithRedirect()}>
                   <BiLogIn className='mr-3 h-8 w-8' />
                 </button>
               )}
