@@ -4,6 +4,7 @@ import { linksData } from "../data";
 import { useGlobal } from "../context/context";
 import clsx from "clsx";
 import { BiLogOut } from "react-icons/bi";
+import { FaShopware } from "react-icons/fa";
 import { SidebarProductDropdown } from "./SidebarProductDropdown";
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -21,11 +22,17 @@ const Sidebar = () => {
         )}></section>
       <div
         className={clsx(
-          "duration-300 lg:hidden w-[60vw] h-screen fixed top-0  bg-[#0c182d] z-30  opacity-100",
+          "duration-300 lg:hidden w-[70vw] h-screen fixed top-0  bg-[#0c182d] z-30  opacity-100",
           { "-translate-x-full ": isSidebarOpen },
           { "translate-x-0 shadow-2xl shadow-black": !isSidebarOpen }
         )}>
         <div className='relative'>
+          <div>
+            <Link to='/' className='flex flex-col items-center py-4'>
+              <FaShopware className='w-8 h-8 mb-1 text-white' />
+              <h1 className='font-bold text-xl text-white'>Electro</h1>
+            </Link>
+          </div>
           <div
             className={
               isAuthenticated ? "h-screen flex flex-col justify-between" : null
@@ -35,7 +42,7 @@ const Sidebar = () => {
                 const { id, name, url, icon } = link;
                 if (name !== "Products")
                   return (
-                    <li className='border-b last:border-b-0' key={id}>
+                    <li className='border-b last:border-b-0 first:border-t' key={id}>
                       <Link
                         to={`${url}`}
                         onClick={switchSidebar}
