@@ -36,9 +36,8 @@ const SingleProductPage = () => {
 
   if (!productData?.assets) return <Loading/>;
   return (
-    <main className='pb-5'>
+    <main className='pb-5 min-h-[calc(100vh_-_6rem)]'>
       <Container>
-
           <div className='grid grid-cols-3 smx:grid-cols-1 lgx:grid-cols-2 pt-10'>
             <div className='sm:grid sm:grid-cols-2 sm:col-span-2'>
               {/* -------------- Images ---------------- */}
