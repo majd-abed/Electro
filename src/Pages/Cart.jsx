@@ -17,13 +17,15 @@ const Cart = () => {
             {cart?.line_items.map((item) => {
               return (
                 <>
-                  <div className='flex bg-gray-100 mb-2 py-3 h-28 items-center'>
+                  <div className='flex bg-gray-50 mb-2 py-3 h-28 items-center'>
                     <div className='h-20 w-48 smx:w-24 smx:h-16 flex justify-center '>
+                      <div className="sm:w-32 bg-white">
                       <img
                         src={item.image.url}
                         alt='Product_image'
-                        className='h-full min-w-32 py-1'
+                        className='h-full min-w-32 py-1 m-auto'
                       />
+                      </div>
                     </div>
                     <div className='flex-1 flex flex-col justify-between h-full'>
                       <div className='flex justify-between w-full'>
