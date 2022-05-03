@@ -20,13 +20,6 @@ const Sidebar = () => {
         { "-z-10 opacity-0": isSidebarOpen }
       )}
     ></section>
-      {/* <div
-        onClick={switchSidebar}
-        className={clsx(
-          { " scale-100": !isSidebarOpen },
-          { "scale-0": isSidebarOpen },
-          "bg-black opacity-50 duration-75 w-screen lg:hidden h-screen fixed top-0 z-20"
-        )}></div> */}
       <div
         className={clsx(
           "duration-300 lg:hidden w-[60vw] h-screen fixed top-0  bg-[#0c182d] z-30  opacity-100",
