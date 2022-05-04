@@ -7,10 +7,15 @@ import { BiLogOut } from "react-icons/bi";
 import { FaShopware } from "react-icons/fa";
 import { SidebarProductDropdown } from "./SidebarProductDropdown";
 import { useAuth0 } from "@auth0/auth0-react";
+import { scrollToTop } from "../helpers/ScrollToTop";
 
 const Sidebar = () => {
   const { logout, user, isAuthenticated } = useAuth0();
   const { isSidebarOpen, switchSidebar } = useGlobal();
+  const handleClick =()=>{
+    switchSidebar()
+    scrollToTop()
+  }
   return (
     <>
       <section
@@ -41,7 +46,7 @@ const Sidebar = () => {
                   <li className='border-b last:border-b-0 first:border-t' key={id}>
                     <Link
                       to={`${url}`}
-                      onClick={switchSidebar}
+                      onClick={handleClick}
                       className='flex items-center text-xl  h-14 px-2 hover:bg-blue-900 hover:pl-4 duration-300'>
                       <div className='mr-1 text-gray-50'>{icon}</div>
                       <p className='text-gray-50'>{name}</p>

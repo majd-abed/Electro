@@ -3,9 +3,14 @@ import { dropDownData } from "../data";
 import clsx from "clsx";
 import { useGlobal } from "../context/context";
 import { Link } from "react-router-dom";
+import { scrollToTop } from "../helpers/ScrollToTop";
 
 export const SidebarProductDropdown = ({ id, name, icon }) => {
   const { switchCategory, isCategoryOpen,switchSidebar } = useGlobal();
+  const handleClick =()=>{
+    switchSidebar()
+    scrollToTop()
+  }
   return (
     <li
       key={id}
@@ -22,7 +27,7 @@ export const SidebarProductDropdown = ({ id, name, icon }) => {
         {dropDownData.map((link) => {
           const { id, name, url, icon } = link;
           return (
-            <Link to={url} key={id} onClick={switchSidebar} className='block pl-8 hover:bg-blue-900 hover:pl-12 duration-300 '>
+            <Link to={url} key={id} onClick={handleClick} className='block pl-8 hover:bg-blue-900 hover:pl-12 duration-300 '>
               <div
                 className='flex items-center text-lg h-10 pl-2 py-6 border-gray-200 duration-300'>
                 <div className='mx-1 text-gray-50'>{icon}</div>
