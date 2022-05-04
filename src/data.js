@@ -2,7 +2,7 @@ import { AiOutlineHome } from "react-icons/ai";
 import { FaMedapps } from "react-icons/fa";
 import { BsBoxSeam } from "react-icons/bs";
 import { VscFlame } from "react-icons/vsc";
-import { GrDropbox } from 'react-icons/gr'
+import { GrDropbox } from 'react-icons/gr';
 import { ProductDropdown } from "./components/ProductDropdown";
 
 
@@ -27,8 +27,8 @@ export const linksData = [
   },
 ]
 
-export const colors = ['All',
-  'white', 'black', 'gray', 'red'
+export const colors = [
+  'All','white', 'black', 'gray', 'red'
 ]
 
 export const categoryData = [
