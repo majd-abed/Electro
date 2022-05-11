@@ -79,7 +79,7 @@ const Cart = () => {
                 ) : (
                   <button
                     onClick={() => loginWithRedirect()}
-                    className='py-2 px-4 bg-green-300 text-white rounded-md text-;g font-semibold hover:bg-green-400 duration-200'>
+                    className='py-2 px-4 bg-green-300 text-white rounded-md text-lg font-semibold hover:bg-green-400 duration-200'>
                     Log In to Checkout
                   </button>
                 )}
