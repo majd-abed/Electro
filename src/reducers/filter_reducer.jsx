@@ -56,7 +56,6 @@ const filter_reducer = (state, action) => {
     let tempProducts = [...all_products];
     if (text) {
       tempProducts = tempProducts.filter((product) => {
-        console.log(aboutItem.find((item) => item.id === product.id));
         return product.name.toLowerCase().startsWith(text);
       });
     }
